@@ -1,0 +1,7 @@
+ExitOnError 1
+r
+h
+loadfile "C:\Users\nxf58132\Documents\MCUXpressoIDE_11.7.0_9198\workspace\k32w148evk_wireless_uart_epaper_freertos\Debug\k32w148evk_wireless_uart_epaper_freertos.hex"
+qc
+
+qc

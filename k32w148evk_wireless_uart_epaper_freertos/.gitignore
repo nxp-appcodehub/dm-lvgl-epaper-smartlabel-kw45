@@ -1,0 +1,4 @@
+/Debug/*
+!Debug/k32w148evk_wireless_uart_epaper_freertos_Debug*.ld
+/Release/*
+!Release/k32w148evk_wireless_uart_epaper_freertos_Release*.ld

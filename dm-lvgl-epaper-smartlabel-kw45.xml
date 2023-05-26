@@ -1,0 +1,24 @@
+<data:item xmlns:data="data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="data ../../xsd/alp.xsd" id="dm-lvgl-epaper-smartlabel-kw45" type="demo" format="projectfile" name="LVGL ePaper Smartlabel KW45">
+    <display_title>
+        BLE smart label based on LVGL using Waveshare e-ink display and KW45
+    </display_title>
+    <overview>
+        <![CDATA[This is an example project to demonstrate the use of GUI Guider and LVGL in the context of a BLE Smart Label using NXP KW45B41Z-EVK or K32W148-EVK boards, a Waveshare 2.9" E-Ink display and NXP IoT Toolbox application.]]>
+    </overview>
+    <toolchains>
+        <toolchain name="mcux"></toolchain>
+    </toolchains>
+    <families>
+        <family name="k32w"></family>
+    </families>
+    <nxp_compatible_hw>
+        <hw id="K32W148-EVK"></hw>
+        <hw id="KW45B41Z-EVK"></hw>
+    </nxp_compatible_hw>
+    <peripherals>
+        <peripheral name="spi"></peripheral>
+    </peripherals>
+    <categories>
+        <category name="graphics"></category>
+    </categories>
+</data:item>

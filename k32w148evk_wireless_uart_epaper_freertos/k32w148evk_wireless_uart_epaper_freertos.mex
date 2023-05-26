@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<configuration name="K32W1480xxxA" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_12 http://mcuxpresso.nxp.com/XSD/mex_configuration_12.xsd" uuid="7744f8a5-2c5c-406e-9b63-7483a0e5f10e" version="12" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_12" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <common>
+      <processor>K32W1480xxxA</processor>
+      <package>K32W1480VFTA</package>
+      <mcu_data>ksdk2_0</mcu_data>
+      <cores selected="cm33">
+         <core name="Cortex-M33" id="cm33" description=""/>
+      </cores>
+      <description>Configuration imported from k32w148evk_wireless_uart_epaper_freertos</description>
+   </common>
+   <preferences>
+      <validate_boot_init_only>true</validate_boot_init_only>
+      <generate_extended_information>false</generate_extended_information>
+      <generate_code_modified_registers_only>false</generate_code_modified_registers_only>
+      <update_include_paths>true</update_include_paths>
+      <generate_registers_defines>false</generate_registers_defines>
+   </preferences>
+   <tools>
+      <pins name="Pins" version="13.0" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="board/pin_mux.c" update_enabled="true"/>
+            <file path="board/pin_mux.h" update_enabled="true"/>
+         </generated_project_files>
+         <pins_profile>
+            <processor_version>13.0.0</processor_version>
+            <pin_labels>
+               <pin_label pin_num="44" pin_signal="ADC0_A8/PTC6/WUU0_P11/LPSPI1_PCS1/TPM1_CH5/FLEXIO0_D22" label="SW2/SW3/SW3" identifier="SW;SW2;SW3"/>
+               <pin_label pin_num="24" pin_signal="ADC0_B5/PTD1/SPC0_LPREQ/NMI_b/RF_GPO_4" label="SW3/SW2/SW2" identifier="SW3;SW2"/>
+               <pin_label pin_num="18" pin_signal="ADC0_A15/CMP0_IN2/PTA21/WUU0_P5/LPSPI0_PCS3/LPUART0_RX/EWM0_OUT_b/TPM0_CH0/RF_GPO_3/RF_GPO_7/FLEXIO0_D8/RF_GPO_10" label="EPaperBusy" identifier="LED_R;EPAPER_BUSY"/>
+               <pin_label pin_num="46" pin_signal="ADC0_B10/PTB0/WUU0_P13/LPSPI1_PCS0/TPM1_CH0/FLEXIO0_D26" label="LED1/LPSPI1_PCS0" identifier="LED1;LPSPI1_PCS0;SPIRAM_CS"/>
+               <pin_label pin_num="14" pin_signal="CMP1_IN0/PTA19/WUU0_P4/LPSPI0_SCK/LPUART0_RTS_b/LPI2C0_SCL/TPM0_CH2/RF_GPO_1" label="LED_G" identifier="LED_G"/>
+               <pin_label pin_num="17" pin_signal="ADC0_A14/CMP0_IN3/PTA20/LPSPI0_PCS2/LPUART0_TX/EWM0_IN/TPM0_CH1/RF_GPO_2/FLEXIO0_D7" label="LED_B" identifier="LED_B"/>
+               <pin_label pin_num="1" pin_signal="ADC0_B13/PTB3/WUU0_P14/LPSPI1_SOUT/LPUART1_RX/TPM1_CH3/FLEXIO0_D29" label="SO_IO1/SO-IO1/SO-IO1" identifier="SO_IO1"/>
+               <pin_label pin_num="2" pin_signal="PTB4/WUU0_P15/LPSPI1_PCS3/LPUART1_CTS_b/LPI2C1_SDA/I3C0_SDA/TRGMUX0_IN0/FLEXIO0_D30" label="CS" identifier="HLD_RST;HOLD_RESET;EPAPER_CS"/>
+               <pin_label pin_num="3" pin_signal="PTB5/LPSPI1_PCS2/LPUART1_RTS_b/LPI2C1_SCL/I3C0_SCL/TRGMUX0_OUT0/FLEXIO0_D31" label="EPaperReset" identifier="WP_IO2;qsd;EPAPER_RST"/>
+               <pin_label pin_num="48" pin_signal="ADC0_B12/PTB2/LPSPI1_SCK/LPUART1_TX/TPM1_CH2/FLEXIO0_D28" label="SCK" identifier="SCKSI_IO1"/>
+               <pin_label pin_num="47" pin_signal="ADC0_B11/PTB1/LPSPI1_SIN/TPM1_CH1/FLEXIO0_D27" label="SI_IO1/SI-IO1/SI-IO1" identifier="SI_IO1"/>
+               <pin_label pin_num="13" pin_signal="CMP1_IN1/PTA18/LPSPI0_SOUT/LPUART0_CTS_b/LPI2C0_SDA/TPM0_CH3/RF_GPO_0/LPUART0_RX" label="DC" identifier="EPAPER_DC"/>
+            </pin_labels>
+         </pins_profile>
+         <functions_list>
+            <function name="BOARD_InitPinButton0">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <prefix>BOARD_INITPINBUTTON0_</prefix>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPinButton0">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_InitPinButton0">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="GPIOD" signal="GPIO, 1" pin_num="24" pin_signal="ADC0_B5/PTD1/SPC0_LPREQ/NMI_b/RF_GPO_4">
+                     <pin_features>
+                        <pin_feature name="identifier" value="SW2"/>
+                        <pin_feature name="pull_select" value="up"/>
+                        <pin_feature name="pull_enable" value="enable"/>
+                        <pin_feature name="pull_value" value="high"/>
+                        <pin_feature name="passive_filter" value="disable"/>
+                        <pin_feature name="open_drain" value="enable"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_InitPinButton1">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <prefix>BOARD_INITPINBUTTON1_</prefix>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPinButton1">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_InitPinButton1">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="GPIOC" signal="GPIO, 6" pin_num="44" pin_signal="ADC0_A8/PTC6/WUU0_P11/LPSPI1_PCS1/TPM1_CH5/FLEXIO0_D22">
+                     <pin_features>
+                        <pin_feature name="identifier" value="SW3"/>
+                        <pin_feature name="pull_select" value="up"/>
+                        <pin_feature name="pull_enable" value="enable"/>
+                        <pin_feature name="slew_rate" value="slow"/>
+                        <pin_feature name="open_drain" value="enable"/>
+                        <pin_feature name="drive_strength" value="low"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_InitPinLED1">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <prefix>BOARD_INITPINLED1_</prefix>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLED1">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLED1">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="GPIOB" signal="GPIO, 0" pin_num="46" pin_signal="ADC0_B10/PTB0/WUU0_P13/LPSPI1_PCS0/TPM1_CH0/FLEXIO0_D26">
+                     <pin_features>
+                        <pin_feature name="identifier" value="LED1"/>
+                        <pin_feature name="pull_select" value="down"/>
+                        <pin_feature name="pull_enable" value="disable"/>
+                        <pin_feature name="slew_rate" value="slow"/>
+                        <pin_feature name="open_drain" value="disable"/>
+                        <pin_feature name="drive_strength" value="low"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_InitPinLED2">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <prefix>BOARD_INITPINLED2_</prefix>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLED2">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLED2">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="GPIOA" signal="GPIO, 21" pin_num="18" pin_signal="ADC0_A15/CMP0_IN2/PTA21/WUU0_P5/LPSPI0_PCS3/LPUART0_RX/EWM0_OUT_b/TPM0_CH0/RF_GPO_3/RF_GPO_7/FLEXIO0_D8/RF_GPO_10">
+                     <pin_features>
+                        <pin_feature name="identifier" value="LED_R"/>
+                        <pin_feature name="pull_select" value="down"/>
+                        <pin_feature name="pull_enable" value="disable"/>
+                        <pin_feature name="slew_rate" value="slow"/>
+                        <pin_feature name="open_drain" value="disable"/>
+                        <pin_feature name="drive_strength" value="low"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_InitPinLED3">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <prefix>BOARD_INITPINLED3_</prefix>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLED3">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLED3">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="GPIOA" signal="GPIO, 19" pin_num="14" pin_signal="CMP1_IN0/PTA19/WUU0_P4/LPSPI0_SCK/LPUART0_RTS_b/LPI2C0_SCL/TPM0_CH2/RF_GPO_1">
+                     <pin_features>
+                        <pin_feature name="pull_select" value="down"/>
+                        <pin_feature name="pull_enable" value="disable"/>
+                        <pin_feature name="pull_value" value="low"/>
+                        <pin_feature name="slew_rate" value="slow"/>
+                        <pin_feature name="passive_filter" value="disable"/>
+                        <pin_feature name="open_drain" value="disable"/>
+                        <pin_feature name="drive_strength" value="low"/>
+                        <pin_feature name="drive_strength_1" value="normal"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_InitPinLED4">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <prefix>BOARD_INITPINLED4_</prefix>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLED4">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLED4">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="GPIOA" signal="GPIO, 20" pin_num="17" pin_signal="ADC0_A14/CMP0_IN3/PTA20/LPSPI0_PCS2/LPUART0_TX/EWM0_IN/TPM0_CH1/RF_GPO_2/FLEXIO0_D7">
+                     <pin_features>
+                        <pin_feature name="pull_select" value="down"/>
+                        <pin_feature name="pull_enable" value="disable"/>
+                        <pin_feature name="slew_rate" value="slow"/>
+                        <pin_feature name="open_drain" value="disable"/>
+                        <pin_feature name="drive_strength" value="low"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_InitPinLPUART0_RX">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="LPUART0" description="Peripheral LPUART0 is not initialized" problem_level="1" source="Pins:BOARD_InitPinLPUART0_RX">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLPUART0_RX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLPUART0_RX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LPUART0" signal="RX" pin_num="11" pin_signal="ADC0_A12/PTA16/RF_NOT_ALLOWED/LPSPI0_PCS0/EWM0_OUT_b/LPI2C0_SCLS/TPM0_CH4/LPUART0_RX/RF_GPO_8/FLEXIO0_D5"/>
+               </pins>
+            </function>
+            <function name="BOARD_InitPinLPUART0_TX">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="LPUART0" description="Peripheral LPUART0 is not initialized" problem_level="1" source="Pins:BOARD_InitPinLPUART0_TX">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLPUART0_TX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLPUART0_TX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LPUART0" signal="TX" pin_num="12" pin_signal="ADC0_A13/PTA17/WUU0_P3/RF_NOT_ALLOWED/LPSPI0_SIN/EWM0_IN/LPI2C0_SDAS/TPM0_CH5/LPUART0_TX/RF_GPO_7/RF_GPO_8/FLEXIO0_D6"/>
+               </pins>
+            </function>
+            <function name="BOARD_InitPinLPUART1_RX">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="LPUART1" description="Peripheral LPUART1 is not initialized" problem_level="1" source="Pins:BOARD_InitPinLPUART1_RX">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLPUART1_RX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLPUART1_RX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LPUART1" signal="RX" pin_num="39" pin_signal="PTC2/WUU0_P9/LPSPI1_SOUT/LPUART1_RX/LPI2C1_SCLS/TPM1_CH2/I3C0_PUR/FLEXIO0_D18"/>
+               </pins>
+            </function>
+            <function name="BOARD_InitPinLPUART1_TX">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="LPUART1" description="Peripheral LPUART1 is not initialized" problem_level="1" source="Pins:BOARD_InitPinLPUART1_TX">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLPUART1_TX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_InitPinLPUART1_TX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LPUART1" signal="TX" pin_num="40" pin_signal="PTC3/LPSPI1_SCK/LPUART1_TX/LPI2C1_SDAS/TPM1_CH3/FLEXIO0_D19"/>
+               </pins>
+            </function>
+            <function name="BOARD_UnInitPinLPUART0_RX">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="ADC0" description="Peripheral ADC0 is not initialized" problem_level="1" source="Pins:BOARD_UnInitPinLPUART0_RX">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLPUART0_RX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLPUART0_RX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="ADC0" signal="A, 12" pin_num="11" pin_signal="ADC0_A12/PTA16/RF_NOT_ALLOWED/LPSPI0_PCS0/EWM0_OUT_b/LPI2C0_SCLS/TPM0_CH4/LPUART0_RX/RF_GPO_8/FLEXIO0_D5"/>
+               </pins>
+            </function>
+            <function name="BOARD_UnInitPinLPUART0_TX">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="ADC0" description="Peripheral ADC0 is not initialized" problem_level="1" source="Pins:BOARD_UnInitPinLPUART0_TX">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLPUART0_TX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLPUART0_TX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="ADC0" signal="A, 13" pin_num="12" pin_signal="ADC0_A13/PTA17/WUU0_P3/RF_NOT_ALLOWED/LPSPI0_SIN/EWM0_IN/LPI2C0_SDAS/TPM0_CH5/LPUART0_TX/RF_GPO_7/RF_GPO_8/FLEXIO0_D6"/>
+               </pins>
+            </function>
+            <function name="BOARD_UnInitPinLPUART1_RX">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="n/a" description="Peripheral n/a is not initialized" problem_level="1" source="Pins:BOARD_UnInitPinLPUART1_RX">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLPUART1_RX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLPUART1_RX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="n/a" signal="disabled" pin_num="39" pin_signal="PTC2/WUU0_P9/LPSPI1_SOUT/LPUART1_RX/LPI2C1_SCLS/TPM1_CH2/I3C0_PUR/FLEXIO0_D18"/>
+               </pins>
+            </function>
+            <function name="BOARD_UnInitPinLPUART1_TX">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="n/a" description="Peripheral n/a is not initialized" problem_level="1" source="Pins:BOARD_UnInitPinLPUART1_TX">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLPUART1_TX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLPUART1_TX">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="n/a" signal="disabled" pin_num="40" pin_signal="PTC3/LPSPI1_SCK/LPUART1_TX/LPI2C1_SDAS/TPM1_CH3/FLEXIO0_D19"/>
+               </pins>
+            </function>
+            <function name="BOARD_UnInitPinButton1">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="ADC0" description="Peripheral ADC0 is not initialized" problem_level="1" source="Pins:BOARD_UnInitPinButton1">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinButton1">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinButton1">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="ADC0" signal="A, 8" pin_num="44" pin_signal="ADC0_A8/PTC6/WUU0_P11/LPSPI1_PCS1/TPM1_CH5/FLEXIO0_D22">
+                     <pin_features>
+                        <pin_feature name="identifier" value="SW3"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_UnInitPinButton0">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="ADC0" description="Peripheral ADC0 is not initialized" problem_level="1" source="Pins:BOARD_UnInitPinButton0">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinButton0">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinButton0">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="ADC0" signal="B, 5" pin_num="24" pin_signal="ADC0_B5/PTD1/SPC0_LPREQ/NMI_b/RF_GPO_4">
+                     <pin_features>
+                        <pin_feature name="identifier" value="SW2"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_UnInitPinLED1">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="ADC0" description="Peripheral ADC0 is not initialized" problem_level="1" source="Pins:BOARD_UnInitPinLED1">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLED1">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLED1">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="ADC0" signal="B, 10" pin_num="46" pin_signal="ADC0_B10/PTB0/WUU0_P13/LPSPI1_PCS0/TPM1_CH0/FLEXIO0_D26">
+                     <pin_features>
+                        <pin_feature name="identifier" value="LED1"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_UnInitPinLED2">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="ADC0" description="Peripheral ADC0 is not initialized" problem_level="1" source="Pins:BOARD_UnInitPinLED2">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLED2">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLED2">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="ADC0" signal="A, 15" pin_num="18" pin_signal="ADC0_A15/CMP0_IN2/PTA21/WUU0_P5/LPSPI0_PCS3/LPUART0_RX/EWM0_OUT_b/TPM0_CH0/RF_GPO_3/RF_GPO_7/FLEXIO0_D8/RF_GPO_10">
+                     <pin_features>
+                        <pin_feature name="identifier" value="LED_R"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_UnInitPinLED3">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="LPCMP1" description="Peripheral LPCMP1 is not initialized" problem_level="1" source="Pins:BOARD_UnInitPinLED3">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLED3">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLED3">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LPCMP1" signal="IN, 0" pin_num="14" pin_signal="CMP1_IN0/PTA19/WUU0_P4/LPSPI0_SCK/LPUART0_RTS_b/LPI2C0_SCL/TPM0_CH2/RF_GPO_1"/>
+               </pins>
+            </function>
+            <function name="BOARD_UnInitPinLED4">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="ADC0" description="Peripheral ADC0 is not initialized" problem_level="1" source="Pins:BOARD_UnInitPinLED4">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLED4">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_UnInitPinLED4">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="ADC0" signal="A, 14" pin_num="17" pin_signal="ADC0_A14/CMP0_IN3/PTA20/LPSPI0_PCS2/LPUART0_TX/EWM0_IN/TPM0_CH1/RF_GPO_2/FLEXIO0_D7"/>
+               </pins>
+            </function>
+            <function name="BOARD_InitEPaperPins">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <createDeInit>true</createDeInit>
+                  <callFromInitBoot>false</callFromInitBoot>
+                  <coreID>cm33</coreID>
+                  <enableClock>true</enableClock>
+                  <customDeInitName>BOARD_UnInitEPaperPins</customDeInitName>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="LPSPI1" description="Peripheral LPSPI1 is not initialized" problem_level="1" source="Pins:BOARD_InitEPaperPins">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitEPaperPins">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_InitEPaperPins">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.gpio" description="Pins initialization requires the GPIO Driver in the project." problem_level="2" source="Pins:BOARD_InitEPaperPins">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LPSPI1" signal="SCK" pin_num="48" pin_signal="ADC0_B12/PTB2/LPSPI1_SCK/LPUART1_TX/TPM1_CH2/FLEXIO0_D28">
+                     <pin_features>
+                        <pin_feature name="pull_select" value="down"/>
+                        <pin_feature name="pull_enable" value="disable"/>
+                        <pin_feature name="slew_rate" value="fast"/>
+                        <pin_feature name="open_drain" value="disable"/>
+                        <pin_feature name="drive_strength" value="high"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="LPSPI1" signal="IN" pin_num="47" pin_signal="ADC0_B11/PTB1/LPSPI1_SIN/TPM1_CH1/FLEXIO0_D27">
+                     <pin_features>
+                        <pin_feature name="direction" value="INPUT"/>
+                        <pin_feature name="pull_select" value="down"/>
+                        <pin_feature name="pull_enable" value="disable"/>
+                        <pin_feature name="slew_rate" value="fast"/>
+                        <pin_feature name="open_drain" value="disable"/>
+                        <pin_feature name="drive_strength" value="high"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="LPSPI1" signal="OUT" pin_num="1" pin_signal="ADC0_B13/PTB3/WUU0_P14/LPSPI1_SOUT/LPUART1_RX/TPM1_CH3/FLEXIO0_D29">
+                     <pin_features>
+                        <pin_feature name="pull_select" value="down"/>
+                        <pin_feature name="pull_enable" value="disable"/>
+                        <pin_feature name="slew_rate" value="fast"/>
+                        <pin_feature name="open_drain" value="disable"/>
+                        <pin_feature name="drive_strength" value="high"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="LPSPI1" signal="PCS3" pin_num="2" pin_signal="PTB4/WUU0_P15/LPSPI1_PCS3/LPUART1_CTS_b/LPI2C1_SDA/I3C0_SDA/TRGMUX0_IN0/FLEXIO0_D30">
+                     <pin_features>
+                        <pin_feature name="identifier" value="EPAPER_CS"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="pull_select" value="up"/>
+                        <pin_feature name="pull_enable" value="disable"/>
+                        <pin_feature name="slew_rate" value="fast"/>
+                        <pin_feature name="open_drain" value="disable"/>
+                        <pin_feature name="drive_strength" value="high"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIOA" signal="GPIO, 18" pin_num="13" pin_signal="CMP1_IN1/PTA18/LPSPI0_SOUT/LPUART0_CTS_b/LPI2C0_SDA/TPM0_CH3/RF_GPO_0/LPUART0_RX">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="no_init"/>
+                        <pin_feature name="pull_select" value="down"/>
+                        <pin_feature name="pull_enable" value="disable"/>
+                        <pin_feature name="pull_value" value="low"/>
+                        <pin_feature name="slew_rate" value="fast"/>
+                        <pin_feature name="passive_filter" value="disable"/>
+                        <pin_feature name="open_drain" value="disable"/>
+                        <pin_feature name="drive_strength" value="low"/>
+                        <pin_feature name="drive_strength_1" value="normal"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIOB" signal="GPIO, 5" pin_num="3" pin_signal="PTB5/LPSPI1_PCS2/LPUART1_RTS_b/LPI2C1_SCL/I3C0_SCL/TRGMUX0_OUT0/FLEXIO0_D31">
+                     <pin_features>
+                        <pin_feature name="identifier" value="EPAPER_RST"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="true"/>
+                        <pin_feature name="pull_select" value="up"/>
+                        <pin_feature name="pull_enable" value="enable"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIOA" signal="GPIO, 21" pin_num="18" pin_signal="ADC0_A15/CMP0_IN2/PTA21/WUU0_P5/LPSPI0_PCS3/LPUART0_RX/EWM0_OUT_b/TPM0_CH0/RF_GPO_3/RF_GPO_7/FLEXIO0_D8/RF_GPO_10">
+                     <pin_features>
+                        <pin_feature name="identifier" value="EPAPER_BUSY"/>
+                        <pin_feature name="direction" value="INPUT"/>
+                        <pin_feature name="gpio_per_interrupt_sel" value="no_init"/>
+                        <pin_feature name="gpio_per_interrupt" value="no_init"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="LPSPI1" signal="PCS0" pin_num="46" pin_signal="ADC0_B10/PTB0/WUU0_P13/LPSPI1_PCS0/TPM1_CH0/FLEXIO0_D26">
+                     <pin_features>
+                        <pin_feature name="identifier" value="SPIRAM_CS"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="pull_select" value="up"/>
+                        <pin_feature name="drive_strength" value="high"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+         </functions_list>
+      </pins>
+      <clocks name="Clocks" version="11.0" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="board/clock_config.c" update_enabled="true"/>
+            <file path="board/clock_config.h" update_enabled="true"/>
+         </generated_project_files>
+         <clocks_profile>
+            <processor_version>13.0.0</processor_version>
+         </clocks_profile>
+         <clock_configurations>
+            <clock_configuration name="BOARD_BootClockRUN" id_prefix="" prefix_user_defined="false">
+               <description></description>
+               <options/>
+               <dependencies>
+                  <dependency resourceType="PinSignal" resourceId="CCM32K.EXTAL32K" description="&apos;EXTAL32K&apos; (Pins tool id: CCM32K.EXTAL32K, Clocks tool id: CCM32K.EXTAL32K) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="CCM32K.EXTAL32K" description="&apos;EXTAL32K&apos; (Pins tool id: CCM32K.EXTAL32K, Clocks tool id: CCM32K.EXTAL32K) needs to have &apos;INPUT&apos; direction" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="CCM32K.XTAL32K" description="&apos;XTAL32K&apos; (Pins tool id: CCM32K.XTAL32K, Clocks tool id: CCM32K.XTAL32K) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="CCM32K.XTAL32K" description="&apos;XTAL32K&apos; (Pins tool id: CCM32K.XTAL32K, Clocks tool id: CCM32K.XTAL32K) needs to have &apos;OUTPUT&apos; direction" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="direction" evaluation="">
+                        <data>OUTPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <clock_sources>
+                  <clock_source id="CCM32K.OSC_32K.outFreq" value="32.768 kHz" locked="false" enabled="true"/>
+               </clock_sources>
+               <clock_outputs>
+                  <clock_output id="BUS_CLK.outFreq" value="96 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CPU_CLK.outFreq" value="96 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FIRC_CLK.outFreq" value="96 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FRO16K_CLK.outFreq" value="16 kHz" locked="false" accuracy=""/>
+                  <clock_output id="RADIO_FRO192M_CLK.outFreq" value="32 MHz" locked="false" accuracy=""/>
+                  <clock_output id="RADIO_FRO192M_FRODIV_CLK.outFreq" value="16 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ROSC_CLK.outFreq" value="32.768 kHz" locked="false" accuracy=""/>
+                  <clock_output id="SCGCLKOUT_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SIRC_CLK.outFreq" value="6 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SLOW_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="System_clock.outFreq" value="96 MHz" locked="false" accuracy=""/>
+               </clock_outputs>
+               <clock_settings>
+                  <setting id="VDDCore" value="voltage_1v1" locked="false"/>
+                  <setting id="CCM32K.CCM32K_32K_SEL.sel" value="CCM32K.OSC_32K" locked="false"/>
+                  <setting id="CCM32K_FRO32K_CTRL_FRO_EN_CFG" value="Disabled" locked="false"/>
+                  <setting id="CCM32K_OSC32K_CTRL_OSC_EN_CFG" value="Enabled" locked="false"/>
+                  <setting id="SCG.DIVBUS.scale" value="1" locked="true"/>
+                  <setting id="SCG.DIVCORE.scale" value="1" locked="true"/>
+                  <setting id="SCG.DIVSLOW.scale" value="4" locked="true"/>
+                  <setting id="SCG.FIRC_TRIMDIV.scale" value="32" locked="true"/>
+                  <setting id="SCG_SOSCCSR_SOSCEN_CFG" value="Enabled" locked="false"/>
+               </clock_settings>
+               <called_from_default_init>true</called_from_default_init>
+            </clock_configuration>
+            <clock_configuration name="BOARD_BootClockHSRUN" id_prefix="" prefix_user_defined="false">
+               <description></description>
+               <options/>
+               <dependencies>
+                  <dependency resourceType="PinSignal" resourceId="CCM32K.EXTAL32K" description="&apos;EXTAL32K&apos; (Pins tool id: CCM32K.EXTAL32K, Clocks tool id: CCM32K.EXTAL32K) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockHSRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="CCM32K.EXTAL32K" description="&apos;EXTAL32K&apos; (Pins tool id: CCM32K.EXTAL32K, Clocks tool id: CCM32K.EXTAL32K) needs to have &apos;INPUT&apos; direction" problem_level="1" source="Clocks:BOARD_BootClockHSRUN">
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="CCM32K.XTAL32K" description="&apos;XTAL32K&apos; (Pins tool id: CCM32K.XTAL32K, Clocks tool id: CCM32K.XTAL32K) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockHSRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="CCM32K.XTAL32K" description="&apos;XTAL32K&apos; (Pins tool id: CCM32K.XTAL32K, Clocks tool id: CCM32K.XTAL32K) needs to have &apos;OUTPUT&apos; direction" problem_level="1" source="Clocks:BOARD_BootClockHSRUN">
+                     <feature name="direction" evaluation="">
+                        <data>OUTPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.ccm32k" description="Clocks initialization requires the CCM32K Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockHSRUN">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <clock_sources>
+                  <clock_source id="CCM32K.OSC_32K.outFreq" value="32.768 kHz" locked="false" enabled="true"/>
+               </clock_sources>
+               <clock_outputs>
+                  <clock_output id="BUS_CLK.outFreq" value="96 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CPU_CLK.outFreq" value="96 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FIRC_CLK.outFreq" value="96 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FRO16K_CLK.outFreq" value="16 kHz" locked="false" accuracy=""/>
+                  <clock_output id="RADIO_FRO192M_CLK.outFreq" value="32 MHz" locked="false" accuracy=""/>
+                  <clock_output id="RADIO_FRO192M_FRODIV_CLK.outFreq" value="16 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ROSC_CLK.outFreq" value="32.768 kHz" locked="false" accuracy=""/>
+                  <clock_output id="SCGCLKOUT_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SIRC_CLK.outFreq" value="6 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SLOW_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="System_clock.outFreq" value="96 MHz" locked="false" accuracy=""/>
+               </clock_outputs>
+               <clock_settings>
+                  <setting id="VDDCore" value="voltage_1v1" locked="false"/>
+                  <setting id="CCM32K.CCM32K_32K_SEL.sel" value="CCM32K.OSC_32K" locked="false"/>
+                  <setting id="CCM32K_OSC32K_CTRL_OSC_EN_CFG" value="Enabled" locked="false"/>
+                  <setting id="SCG.DIVCORE.scale" value="1" locked="true"/>
+                  <setting id="SCG.DIVSLOW.scale" value="4" locked="true"/>
+               </clock_settings>
+               <called_from_default_init>false</called_from_default_init>
+            </clock_configuration>
+         </clock_configurations>
+      </clocks>
+      <dcdx name="DCDx" version="3.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <dcdx_profile>
+            <processor_version>N/A</processor_version>
+         </dcdx_profile>
+         <dcdx_configurations/>
+      </dcdx>
+      <periphs name="Peripherals" version="12.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <peripherals_profile>
+            <processor_version>N/A</processor_version>
+         </peripherals_profile>
+         <functional_groups/>
+         <components/>
+      </periphs>
+      <tee name="TEE" version="4.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <tee_profile>
+            <processor_version>N/A</processor_version>
+         </tee_profile>
+      </tee>
+   </tools>
+</configuration>
